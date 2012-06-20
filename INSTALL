@@ -1,0 +1,11 @@
+ArchLinux
+==========
+
+Add user 'jambot'
+
+To start as a daemon at boot:
+
+ln -s /path/to/jambot/rc.d/jambot /etc/rc.d/jambot
+ln -s /run/daemons/jambot /path/to/jambot/bin/jambot
+
+Edit /etc/rc.conf and add jambot to DAEMONS

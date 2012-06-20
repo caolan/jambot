@@ -1,0 +1,8 @@
+{
+    "name": "groundbot-jam-repository",
+    "version": "0.0.1",
+    "description": "Watches the jam repository for changes an announces them",
+    "dependencies": {
+        "follow": "0.8.x"
+    }
+}

@@ -1,0 +1,38 @@
+#!/bin/bash
+
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ] ; do SOURCE="$(readlink "$SOURCE")"; done
+DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+PIDFILE="$DIR/../jambot.pid"
+LOGFILE="$DIR/../log/jambot.log"
+OUTFILE="$DIR/../log/jambot.stdout"
+ERRFILE="$DIR/../log/jambot.stderr"
+
+mkdir -p "$DIR/../log"
+
+FOREVER="$(realpath $DIR/../node_modules/forever/bin/forever) --pidFile $PIDFILE -l $LOGFILE -o $OUTFILE -e $ERRFILE --append"
+
+BOT="$(realpath $DIR/../lib/bot.js)"
+
+case "$1" in
+    "start")
+        $FOREVER "start" $BOT
+        ;;
+    "stop")
+        $FOREVER "stop" $BOT
+        ;;
+    "restart")
+        $FOREVER "restart" $BOT
+        ;;
+    "fg")
+        node $BOT
+        ;;
+    *)
+        if [ -n "$1" ]; then
+            echo "Unknown command: $1"
+        fi
+        echo "Usage: $0 start|stop|restart|fg"
+        exit 1
+        ;;
+esac

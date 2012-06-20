@@ -1,0 +1,13 @@
+exports.irc = {
+    nick: 'bot',
+    server: 'irc.freenode.net',
+    channels: ['#mychannel']
+};
+
+exports.logger = {
+    level: 'info'
+};
+
+exports['jam-repository'] = {
+    db: 'http://groundcomputing.co.uk/code/jam/repository'
+};

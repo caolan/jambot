@@ -1,0 +1,19 @@
+{
+    "name": "jambot",
+    "version": "0.0.1",
+    "description": "The Jam IRC bot",
+    "maintainers": [
+        {"name": "Caolan McMahon", "web": "https://github.com/caolan"}
+    ],
+    "dependencies": {
+        "irc": "0.3.x",
+        "forever": "0.9.x"
+    },
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/caolan/jambot.git"
+    },
+    "bugs": {"url": "http://github.com/caolan/jambot/issues"},
+    "directories": { "lib": "./lib" },
+    "bin": {"jambot": "./bin/jambot"}
+}
