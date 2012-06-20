@@ -1,3 +1,4 @@
 config.js
 log/*
 jambot.pid
+node_modules
