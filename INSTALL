@@ -9,3 +9,5 @@ ln -s /path/to/jambot/rc.d/jambot /etc/rc.d/jambot
 ln -s /path/to/jambot/bin/jambot /run/daemons/jambot
 
 Edit /etc/rc.conf and add jambot to DAEMONS
+
+Make sure you create a config.js in the jambot directory
